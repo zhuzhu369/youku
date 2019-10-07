@@ -1,0 +1,307 @@
+<html>
+    
+    <head>
+        <meta http-equiv="">
+        <img id=01 src="head.png" alt="no internet" width="100%"height="73">
+        <body>
+            <p>
+                 <style>
+                    #picture{
+                        width: 90%;
+                        height: 600px;
+                        position: absolute;
+                        top:75px
+                    }
+                    #picture img{
+                        width:99.2%;
+                        height:100%
+                    }
+                    
+                </style>
+                
+                
+                <style type="text/css">
+                div.normal1:hover{
+                    color: blue;
+                    filter: brightness(1.2)
+                }
+                div.normal2:hover{
+                    color: blue;
+                    filter: brightness(1.2)
+                }
+                div.normal3:hover{
+                    color: blue;
+                    filter: brightness(1.2)
+                }
+                div.normal4:hover{
+                    color: blue;
+                    filter: brightness(1.2)
+                }
+                div.normal5:hover{
+                    color: blue;
+                    filter: brightness(1.2)
+                }
+                div.king:hover{
+                    filter: brightness(1.5);
+                }
+                .txt{position: absolute;;
+                    right:80px;
+                    top:78px;
+                    width: 275;
+                    height: 600px;
+                    background-color: rgba(43, 42, 42, 0.267)}
+                .king{
+                    float: left;
+                    width:5%;height: 10%;;font-family:sans-serif;color: yellow;font-size: 15px;
+                    position: relative;
+                    left: 0.7em;
+                    top: 0.4em;
+                }
+                .normal1,.normal2,.normal3,.normal4,.normal5{
+                 
+                    width:14%;height: 10%;margin: 0em;
+                    font-family: cursive;
+                    color:whitesmoke;
+                    float: left;
+                    position: relative;
+                    left: 3.2em;
+                    top: 0.8em;
+                    font-size: 0.7em;
+                
+                }
+                .element1{
+                    width: 400px;
+                    height:150px;
+                    background-color: rgb(255, 255, 255);
+                    display:none;
+                    position: absolute;
+                    margin-left: -200px;
+                    margin:0,auto
+                   
+                }
+                .element2{
+                    width: 400px;
+                    height:150px;
+                    background-color: rgb(255, 255, 255);
+                    display:none;
+                    position: absolute;
+                    margin-left: -200px;
+                    margin:0,auto
+                   
+                }
+                 .element3{
+                    width: 300px;
+                    height:200px;
+                    background-color: rgb(255, 255, 255);
+                    display:none;
+                    position: absolute;
+                    margin-left: -150px;
+                    margin:0,auto
+                   
+                }
+                .normal3:hover .element1{
+                    display:block;
+                }
+                 .normal4:hover .element2{
+                    display:block;
+                }
+                 .normal5:hover .element3{
+                    display:block;
+                }
+                </style>
+                <style type="text/css">
+                #yanshi{
+                    height: 280px;
+                    width: 100%;
+                    position: relative;
+                    top:80px;
+                    left: 40px;
+                    float: left;
+                }
+                #yanshi ul{
+                    width: 100%;
+                    height: 100%;
+                }
+                #yanshi ul li{
+                    float: left;
+                    height: 40px;
+                    width: 100%;
+                    color:white;
+                    margin-bottom: 0px;
+                     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    size: 2em;
+
+                }
+                #ul active{
+                       height:70 ;
+                       background-color: rgba(43, 42, 42, 0.61);
+                       filter:brightness(1.2);
+                       font-size:30
+                }
+                #picture{
+                    width: 100%;
+                    height: 600px;
+                    background-color: white;
+                    position: absolute;
+                    top: 75px;
+
+                }
+                </style>
+                <style>
+                    .xialan{
+                        width: 100%;
+                        height: 400px;
+                        position: relative;
+                        top:600px;
+                        left: 60px;
+
+                    }
+                    .xialan a{
+                        margin-right: 3em
+                    }
+                    div.xialan a:hover{
+                        color:blue;
+                    }
+                    .youlan{
+                        width: 300px;
+                        height: 200px;
+                        position: absolute;
+                        top: 700px;
+                        right: 50px;
+
+                    }
+                    div.youlan:hover{color:blue;}
+                    div.youlan img{ transition: all .3s;}
+                    div.youlan:hover img{
+                        transform: translateY(-5px);
+                    }
+                   
+                </style>
+                <style>
+                    .sousuo{
+                        position:absolute;
+                        width: 100%;
+                        top: 80px;
+                    }
+                    .sousuo input{
+                        width: 350px;
+                        border: 3px solid lightgray;
+                        background-color: rgba(39, 39, 39, 0.247);
+                        align-self: center;
+                        position:absolute;
+                        left: 750px;
+                        top:-5px}
+                </style>
+
+                 <script type="text/javascript">
+                 var picture = document.getElementById('picture');
+                 var imgs = picture.getElementsByTagName('img')[0];
+                 var yanshi = document.getElementById('yanshi')
+                 var uls = yanshi.getElementsByTagName('yanshi')[0];
+                 var lis = uls.getElementsByTagName('li')[0];
+                 var arrTxt = ['1','2','3','4','5','6','7',];
+                 var arrUrl = ['.1.jpg','.2.jpg','.3.jpg','.4.jpg','.5.jpg','.6.jpg','.7.jpg']
+                 var num = 0;
+                 var timer = null;
+                 function autoPlay(){
+                    timer = setInterval(function(){
+                    num ++;
+                    num %= arrUrl.length;
+                    fnTab();                
+                    },2000);
+                    }
+                 picture.onmouseover = function(){
+                    clearInterval(timer);
+                    };
+                 pic.onmouseout = autoPlay;
+                 for(var i=0;i<arrUrl.length;i++){
+                 uls.innerHTML += '<li></li>';
+
+                 }
+                  lis[num].innerHTML = arrTxt[num];
+                 function fnTab(){
+                    imgs.src = arrUrl[num];
+                    for(var i=0;i<lis.length;i++){
+                    lis[i].className = '';
+                    }
+                    lis[num].className = 'active';
+                 }
+                 fnTab()
+                 for(var i=0;i<lis.length;i++){  
+                 lis[i].index = i;
+                 lis[i].onmouseover = function(){            
+                 num = this.index;
+                 fnTab();
+                 };
+                 }            
+                   
+                </script>
+                <script type="text/javascript">{
+                 
+                 }
+                </script>
+                 <div id=picture>
+                     <img src=".1.jpg" alt="">
+
+                 </div>
+
+                <div class="txt">
+                
+                     <div class="king" title="VIP">
+                         <img src="king.svg" style='width:1.8em;height:1.8em;display: inline-block'><br> &nbspvip</div>
+                     <div class="normal1" title="订阅">
+                         <img src="1.svg" style='width:2.4em;height:2.4em;display: inline-block'><br> 订阅</div>
+                     <div class="normal2" title="记录">
+                         <img src="2.svg" style='width:2.4em;height:2.4em;display: inline-block'><br> 记录</div>
+                     <div class="normal3" title="上传">
+                     <img src="3.svg" style='width:2.4em;height:2.4em;display: inline-block'><br>上传
+                         <div class=element1>
+                         
+                         </div>
+                     </div>
+                     <div class="normal4" title="客户端">
+                         <img src="4.svg" style='width:2.4em;height:2.4em;display: inline-block'><br> 客户端
+                         <div class=element2>
+                         
+                         </div>
+                     </div>
+                     <div class="normal5">
+                         <img src="5.svg" style='width:5em;height:5em;display:inline-block'>
+                         <div class=element3>
+                         
+                         </div>
+                   
+                     </div>
+                     
+                     <div id=yanshi>
+                         <ul>
+
+                         </ul>
+                     </div>
+
+                     
+                </div>
+               
+            </p>
+            <div class="xialan">
+              <a><img src="1.svg" style="width:1em;height:1em">剧集</a> &nbsp;&nbsp;<a><img src="2.svg" style="width:1em;height:1em">电影</a>&nbsp;&nbsp;&nbsp;<a><img src="3.svg" style="width:1em;height:1em">少儿</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>文化</a>&nbsp;&nbsp;&nbsp;<a>体育</a>&nbsp;&nbsp;&nbsp;<a>来疯</a>&nbsp;&nbsp;&nbsp;<a>时尚</a>&nbsp;&nbsp;&nbsp;<a>音乐</a>&nbsp;&nbsp;&nbsp;<a>旅游</a>&nbsp;&nbsp;&nbsp;<a>娱乐</a>&nbsp;&nbsp;&nbsp;<a>资讯</a>&nbsp;&nbsp;&nbsp;<a>公益</a>&nbsp;&nbsp;&nbsp;<a>财经</a>&nbsp;&nbsp;&nbsp;
+              <br><br><br>
+              <a><img src="4.svg" style="width:1em;height:1em">综艺 </a>&nbsp;&nbsp;&nbsp;<a><img src="5.svg" style="width:1em;height:1em">动漫</a> &nbsp;&nbsp;&nbsp;<a><img src="6.svg" style="width:1em;height:1em">纪录片</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>教育</a>&nbsp;&nbsp;&nbsp;<a>游戏</a>&nbsp;&nbsp;&nbsp;<a>直播</a>&nbsp;&nbsp;&nbsp;<a>搞笑</a>&nbsp;&nbsp;&nbsp;<a>汽车</a>&nbsp;&nbsp;&nbsp;<a>亲子</a>&nbsp;&nbsp;<a>生活</a>&nbsp;&nbsp;&nbsp;<a>片库</a>&nbsp;&nbsp;&nbsp;<a>科技</a>&nbsp;&nbsp;&nbsp;<a>发现</a>
+             
+            </div>
+            <div class="youlan">
+                &nbsp;<img src="1.svg" style="width:3em;height:3em"><br>优酷片库
+            </div>
+
+            <div class="sousuo">
+            <input type="text" ;class="search"; maxlength="180"; value="" ;>
+            </div> 
+
+            
+
+            
+           
+            
+        </body>
+    </head>
+</html>

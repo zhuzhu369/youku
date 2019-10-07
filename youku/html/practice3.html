@@ -1,0 +1,65 @@
+!DOCTYPE html>
+<html>
+<head>
+	<title>鼠标移到到图片，图片向上滑动预览效果</title>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+	<script type="text/javascript">
+	//图片滚动
+	$(document).ready(function(){
+	  function template($this,img_h,info_h){
+	    function img1_sin(){
+	      $this.find(".img1").find("img").stop(true,true).animate({
+	        top: -(img_h-info_h)
+	      },(img_h-info_h)*4,"linear")
+	    }
+	    img1_sin();
+	  }
+	  $(".slide").mouseover(function(){
+
+	    var info_h = $(this).find(".img1").find(".info").height();
+	    var img_h = $(this).find(".img1").find("img").height();
+	    template($(this),img_h,info_h);
+	  })
+	  $(".slide").mouseout(function(){
+	    $(this).find(".img1").find("img").stop(true,true).animate({
+	      top: 0
+	    }, 800 , "linear");
+	  })
+	})
+	</script>
+	<style type="text/css">
+	  .img1{
+	    width: 305px;
+	    height: 206px;
+	    padding: 12px 1px 1px;
+	    -webkit-transition: all .3s;
+	    transition: all .3s;
+	    position: relative;
+	  }
+	  .info{    
+	    overflow: hidden;
+	    height: 100%;
+	    position: relative;
+	  }
+	  .slide img{
+	    max-height: inherit;
+	    *max-height: none;
+	    position: absolute;
+	    top: 0;
+	  }
+	</style>
+</head>
+<body>
+	<div class="slide" style="width:330px;">
+        <div class="img1" style="margin-left:15px;">
+          <div class="info">
+            <a href="" target="_blank"><img src="http://www.hunuoyun.com/upload/product/1811/201811225424.png" width="305" alt=""></a>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
+1
+————————————————
+版权声明：本文为CSDN博主「每天都进步一点点」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/gongqinglin/article/details/89305835
