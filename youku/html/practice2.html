@@ -21,4 +21,29 @@
                          document.getElementById("t01").style.fontSize=10
                          var image="<img src='.1.jpg' width=99.2% height=100%>"
                          document.getElementById("picture").innerHTML=(image)}
+
+
+
+
+
+
+
+                         function autoPlay(){
+    timer = setInterval(function(){
+        num ++;
+        num %= menu_divs.length;
+        fnTab();                
+    },1000);
+    banner_img.onmouseover = function(){
+    clearInterval(timer);
+};
+banner_img.onmouseout = autoPlay;
+function fnTab(){
+    
+    for (var j = 0; j < menu_divs.length; j++) {
+            menu_divs[j].className = "";
+        }
+    menu_divs[num].className ="menu-active"
+    banner_img.style.background = "url('." + num + ".jpg') no-repeat center center";
+}
                         
